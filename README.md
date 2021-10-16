@@ -6,6 +6,6 @@ with some visulizations like barchart or piechart
 
 2.For csv file we will use Kaggel.com, this website provides data with help of community
 
-3.Will deploy this project will help of nginx
+3.Will deploy this project with help of nginx
 
 4.Will use Flask/Fast Api for server
