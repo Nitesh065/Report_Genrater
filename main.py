@@ -1,7 +1,10 @@
+import codecs
+
 from fastapi import FastAPI, File, UploadFile,Request
 import pandas as pd
 import numpy as n
 from pathlib import Path
+import shutil
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, inch, landscape, legal, letter
 import csv
@@ -66,7 +69,9 @@ async def upload_file(csv_file:UploadFile = File(...)):
     style_config.wordWrap = 'CJK'
 
 
-    readFile = pd.read_csv(csv_file.file)
+    readFile = csv.DictReader(codecs.iterdecode(csv_file.file,'utf-8'))
     dataList = list(readFile)
-    print(dataList)
+    #print(dataList)
+    headers = dataList[0]
+    print(headers)
     return {"fileName":csv_file.filename}
