@@ -73,5 +73,23 @@ async def upload_file(csv_file:UploadFile = File(...)):
     dataList = list(readFile)
     #print(dataList)
     headers = dataList[0]
-    print(headers)
+    #print(headers)
+    for record in range(1,len(dataList)):
+        file_records = dataList[record]
+        print((file_records))
+
+        data = list()
+        nullRecords = list()
+        records = list()
+        headers = list()
+        count = 0
+
+        for line in file_records:
+            if line == "":
+                nullRecords.append(line)
+            else:
+                records.append(line)
+                headers.append(count)
+                data.append([str(headers[count]),str(line)])
+            count += 1
     return {"fileName":csv_file.filename}
