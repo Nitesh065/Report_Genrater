@@ -1,8 +1,7 @@
 # Report_Genrater
 A simple python project to convert the csv data in pdf with some visulizations
 
-1.In this Project we will use pandas and MatPlotLib libraries to convert the csv file into a pdf,
-with some visulizations like barchart or piechart
+1.In this Project we will use repotlab libraries to make csv file into pdf,
 
 2.For csv file we will use Kaggel.com, this website provides data with help of community
 
