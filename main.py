@@ -4,7 +4,7 @@ import csv
 import  os
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
-from reportlab.lib.units import cm, inch
+from reportlab.lib.units import cm
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import *
 from reportlab.platypus import *
@@ -54,7 +54,7 @@ async def upload_file(csv_file:UploadFile = File(...)):
             ('ALIGN', column0[0], column0[1], 'LEFT'),
             ('ALIGN', column1[0], column1[1], 'LEFT'),
             ('ALIGN', column2[0], column2[1], 'LEFT'),
-            ('ALIGN', column3[0], column3[1], 'RIGHT'),
+            ('ALIGN', column3[0], column3[1], 'LEFT'),
             ('ALIGN', column4[0], column4[1], 'LEFT'),
             ('ALIGN', column5[0], column5[1], 'LEFT'),
             ('ALIGN', column6[0], column6[1], 'LEFT'),
@@ -95,4 +95,4 @@ async def upload_file(csv_file:UploadFile = File(...)):
     print('Demo Report Generated')
 
 
-    return {"Report_Genrated":csv_file.filename}
+    return {"Pdf Report_Genrated in local files":csv_file.filename}
