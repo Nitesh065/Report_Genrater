@@ -8,3 +8,5 @@ A simple python project to convert the csv data in pdf with some visulizations
 3.Will deploy this project with help of nginx
 
 4.Will use Flask/Fast Api for server
+
+5.Run the server with(uvicorn main:app --reload ) will get the server url(http://127.0.0.1:8000/home) and the run the project
